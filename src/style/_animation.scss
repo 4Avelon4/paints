@@ -87,69 +87,67 @@
   }
 }
 
-// .control-panel__item {
-//   &--search,
-//   &--profile,
-//   &--favorites {
-//     &:active {
-//       stroke: $accent;
-//       opacity: 0.3;
-//     }
-
-//     @include xl {
-//       &:focus {
-//         outline: none;
-//       }
-
-//       &:focus,
-//       &:hover svg path {
-//         stroke: $active;
-//         stroke: blue !important;
-//         fill: red;
-//       }
-
-//       &:active {
-//         stroke: $accent;
-//         opacity: 0.3;
-//       }
-//     }
-
-//     & {
-//       transition: stroke .2s ease-in-out, opacity .2s ease-in-out;
-//     }
-//   }
-// }
-
 .control-panel__item {
+  &:active svg path {
+    stroke: $accent;
+    opacity: 0.3;
+  }
+
+  @include xl {
+    &:focus {
+      outline: none;
+    }
+
+    &:focus svg {
+      outline: none;
+    }
+
+    &:focus svg path,
+    &:hover svg path {
+      stroke: $active;
+    }
+
     &:active svg path {
       stroke: $accent;
       opacity: 0.3;
     }
+  }
 
-    @include xl {
-      &:focus {
-        outline: none;
-      }
+  & svg path {
+    transition: stroke .2s ease-in-out, opacity .2s ease-in-out;
+  }
+}
 
-      &:focus svg {
-        outline: none;
-      }
+.control-panel__item {
+  &:active &--profile g circle {
+    stroke: $accent;
+    opacity: 0.3;
+  }
 
-      &:focus svg path,
-      &:hover svg path {
-        stroke: $active;
-      }
-
-      &:active svg path {
-        stroke: $accent;
-        opacity: 0.3;
-      }
+  @include xl {
+    &:focus {
+      outline: none;
     }
 
-    & {
-      transition: stroke .2s ease-in-out, opacity .2s ease-in-out;
+    &:focus &--profile {
+      outline: none;
+    }
+
+    &:focus &--profile g circle,
+    &:hover &--profile g circle {
+      stroke: $active;
+    }
+
+    &:active &--profile g circle {
+      stroke: $accent;
+      opacity: 0.3;
     }
   }
+
+  & &--profile g circle {
+    transition: stroke .2s ease-in-out, opacity .2s ease-in-out;
+  }
+}
 
 .catalog-item__button {
   &:focus {
