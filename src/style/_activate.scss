@@ -1,0 +1,28 @@
+  .filter-open {
+    visibility: visible;
+  }
+
+  .stop--scroll {
+    overflow: hidden;
+  }
+
+  .basket-open {
+    visibility: visible;
+    transform: translateX(-375px);
+
+    @include md {
+      transform: translateX(-605px);
+    }
+  }
+
+  .hide {
+    display: none;
+  }
+
+  .opacity-20 {
+    opacity: 0.2;
+  }
+
+  .opacity-40 {
+    opacity: 0.4;
+  }

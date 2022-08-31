@@ -151,32 +151,6 @@
     }
   }
 
-// .control-panel__item {
-//     &:active svg {
-//       stroke: $accent;
-//       opacity: 0.3;
-//     }
-
-//     @include xl {
-
-//       &:focus svg,
-//       &:hover svg {
-//         stroke: $active;
-//         stroke: blue;
-//         outline: none;
-//       }
-
-//       &:active svg {
-//         stroke: $accent;
-//         opacity: 0.3;
-//       }
-//     }
-
-//     svg {
-//       transition: stroke .2s ease-in-out, opacity .2s ease-in-out;
-//     }
-//   }
-
 .catalog-item__button {
   &:focus {
     outline: none;
@@ -276,7 +250,6 @@
   }
 }
 
-// _____________________________________________--
 .basket-item__button-toggle {
   &:focus {
     outline: none;
@@ -284,7 +257,7 @@
 
   &:active {
     opacity: 1;
-    transform: translate(1px, 1px) scale(1.1);
+    transform: translate(-1px, 1px) scale(1.05);
   }
 
   @include xl {
@@ -292,12 +265,12 @@
     &:hover {
       outline: none;
       opacity: 1;
-      transform: scale(1.2);
+      transform: scale(1.05);
     }
 
     &:active {
       opacity: 1;
-      transform: translate(1px, 1px) scale(1.1);
+      transform: translate(-1px, 1px) scale(1.05);
     }
   }
 
@@ -334,7 +307,6 @@
   }
 }
 
-// мб убрать?
 .select__item {
   &:focus {
     outline: none;
@@ -358,6 +330,5 @@
 
   & {
     transition: opacity .1s ease-in-out, background-color .1s ease-in-out;
-
   }
 }

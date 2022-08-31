@@ -14,33 +14,4 @@
 @import '_catalog.scss';
 @import '_footer.scss';
 @import '_animation.scss';
-
-
-  .filter-open {
-    visibility: visible;
-  }
-
-  .stop--scroll {
-    overflow: hidden;
-  }
-
-  .basket-open {
-    visibility: visible;
-    transform: translateX(-375px);
-
-    @include md {
-      transform: translateX(-605px);
-    }
-  }
-
-  .hide {
-    display: none;
-  }
-
-  .opacity-20 {
-    opacity: 0.2;
-  }
-
-  .opacity-40 {
-    opacity: 0.4;
-  }
+@import '_activate.scss';
