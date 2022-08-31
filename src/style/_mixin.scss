@@ -1,0 +1,50 @@
+@mixin sm {
+  @media (min-width: $small-media-width) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: $medium-media-width) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: $large-media-width) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: $x-large-media-width) {
+    @content;
+  }
+}
+
+@mixin xxl {
+  @media (min-width: $xx-large-media-width) {
+    @content;
+  }
+}
+
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0);
+  overflow: hidden;
+}
+
+%clearListStyles {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hide {
+  display: none;
+}

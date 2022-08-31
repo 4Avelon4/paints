@@ -1,0 +1,345 @@
+.header {
+  background-color: $body-background;
+}
+
+.header__container {
+  position: relative;
+  padding: 18px 20px;
+  display: flex;
+  justify-content: space-between;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 330px;
+    height: 1px;
+    left: 21px;
+    top: 64px;
+    background: $accent;
+    opacity: 0.06;
+  }
+
+  @include sm {
+    padding: 20px 23px;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+  }
+
+  @include md {
+    padding: 25px 33px;
+  }
+
+  @include lg {
+    padding: 36px;
+    padding-bottom: 33px;
+    flex-direction: row;
+  }
+
+  @include xxl {
+    padding-left: 64px;
+    padding-right: 64px;
+  }
+}
+
+
+.header__logo {
+  position: relative;
+  width: 99px;
+  height: 21px;
+  padding-top: 5px;
+  padding-right: 1px;
+
+  @include md {
+    padding-bottom: 0;
+    padding-top: 7px;
+    padding-left: 2px;
+    padding-right: 0;
+  }
+
+  @include xl {
+    padding-top: 9px;
+  }
+}
+
+.logo__descr {
+  @include md {
+    transform: scale(136%) translateX(10px);
+  }
+
+  @include xl {
+    padding-bottom: 10px;
+  }
+}
+
+.logo__ellipse {
+  position: absolute;
+  top: 5px;
+  right: 2px;
+
+  @include md {
+    top: 4px;
+    right: -29px;
+  }
+
+  @include lg {
+    right: -41px;
+  }
+}
+
+.menu {
+  position: absolute;
+  z-index: 4;
+  top: 0;
+  left: -50%;
+  width: 50%;
+  background-color: $body-background;
+  visibility: hidden;
+  transition: visibility .3s ease-in-out, transform .3s ease-in-out;
+
+  @include sm {
+    background-color: transparent;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100% !important;
+    padding: 0;
+    visibility: visible;
+    transform: none;
+    transition: none;
+  }
+
+  @include md {
+    z-index: 0;
+    top: 0;
+    left: 0;
+  }
+
+  @include lg {
+    padding-left: 95px;
+    padding-right: 15px;
+  }
+
+  @include xxl {
+    padding-left: 213px;
+  }
+
+  &__list {
+    @extend %clearListStyles;
+    padding: 75px 15px;
+
+    @include sm {
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      padding-top: 20px;
+    }
+
+    @include md {
+      display: flex;
+      padding-top: 10px;
+      font-size: 14px;
+    }
+
+    @include lg {
+      justify-content: start;;
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 10px;
+      margin-right: 23px;
+    }
+
+    &:nth-child(3) {
+      margin-right: 26px;
+    }
+  }
+
+  &__link {
+    display: block;
+    color: $accent;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+
+    @include xxl {
+      font-size: 14px;
+    }
+  }
+}
+
+.contacts {
+  display: none;
+
+  @include sm {
+    display: block;
+    position: absolute;
+    right: 75px;
+  }
+
+  @include lg {
+    position: static;
+    margin-right: 24px;
+  }
+
+  @include xl {
+    margin-right: 70px;
+  }
+
+  @include xl {
+    position: relative;
+    top: 1px;
+    margin-right: 38px
+  }
+
+  &__tel {
+    margin: 0;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: -0.02em;
+    color: $accent;
+    width: 150px;
+  }
+
+  &__descr {
+    cursor: pointer;
+    display: block;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    color: $accent;
+    opacity: 0.3;
+    max-width: 150px;
+  }
+}
+
+.control-panel {
+  padding-top: 2px;
+  padding-right: 4px;
+
+  @include sm {
+    position: absolute;
+    right: 20px;
+  }
+
+  @include md {
+    padding-top: 5px;
+  }
+
+  @include lg {
+    position: static;
+    padding-right: 0;
+  }
+
+  &__list {
+    @extend %clearListStyles;
+    display: flex;
+  }
+
+  &__item {
+    cursor: pointer;
+
+    &--basket {
+      position: relative;
+
+      &-descr {
+        position: absolute;
+        left: 8px;
+        top: 5px;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 15px;
+        text-align: center;
+        letter-spacing: 0.06em;
+        color: $accent;
+      }
+    }
+  }
+
+  &__item:not(:last-child) {
+    display: none;
+    margin-right: 24px;
+
+    @include xl {
+      display: block;
+    }
+  }
+}
+
+// toggle
+.toggle {
+  display: none;
+  position: relative;
+  width: 30px;
+  height: 30px;
+  top: 12px;
+  left: -2px;
+
+  @media (max-width: 575px) {
+    display: block;
+
+
+    &__btn {
+      display: block;
+      position: absolute;
+      z-index: 5;
+      background-color: transparent;
+      border: none;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &__icon,
+    &__icon::before,
+    &__icon::after {
+      display: block;
+      content: '';
+      background-color: $accent;
+      height: 2px;
+      width: 24px;
+      transition: all ease-in-out .3s;
+    }
+
+    &__icon::before {
+      transform: translateY(-6px);
+    }
+
+    &__icon::after {
+      transform: translateY(4px);
+    }
+
+    &__btn--open &__icon {
+      background-color: transparent;
+    }
+
+    &__btn--open &__icon::before {
+      transform: translate(-2px, 0px) rotate(45deg);
+      width: 23px;
+    }
+
+    &__btn--open &__icon::after {
+      transform: translate(-2px, -1px) rotate(-45deg);
+      width: 23px;
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  .open {
+    visibility: visible;
+    transform: translateX(100%);
+  }
+
+  .stop--scroll {
+    overflow: hidden;
+  }
+}

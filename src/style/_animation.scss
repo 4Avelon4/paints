@@ -1,0 +1,363 @@
+.menu__link,
+.check__descr,
+.select__current {
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    color: $accent;
+    opacity: 0.3;
+  }
+
+  @include xl {
+
+    &:focus,
+    &:hover {
+      color: $active;
+      outline: none;
+    }
+
+    &:active {
+      color: $accent;
+      opacity: 0.3;
+    }
+  }
+
+  & {
+    transition: color .2s ease-in-out, opacity .2s ease-in-out;
+  }
+}
+
+.contacts__descr,
+.info__descr,
+.basket__clear {
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    opacity: 1;
+  }
+
+  @include xl {
+
+    &:focus,
+    &:hover {
+      opacity: 0.6;
+      outline: none;
+    }
+
+    &:active {
+      opacity: 1;
+    }
+  }
+
+  & {
+    transition: opacity .15s ease-in-out;
+  }
+}
+
+.check__descr {
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    color: $accent;
+    opacity: 0.3;
+  }
+
+  @include xl {
+
+    &:focus,
+    &:hover {
+      color: $active;
+      outline: none;
+    }
+
+    &:active {
+      color: $accent;
+      opacity: 0.3;
+    }
+  }
+
+  & {
+    transition: color .2s ease-in-out, opacity .2s ease-in-out;
+  }
+}
+
+// .control-panel__item {
+//   &--search,
+//   &--profile,
+//   &--favorites {
+//     &:active {
+//       stroke: $accent;
+//       opacity: 0.3;
+//     }
+
+//     @include xl {
+//       &:focus {
+//         outline: none;
+//       }
+
+//       &:focus,
+//       &:hover svg path {
+//         stroke: $active;
+//         stroke: blue !important;
+//         fill: red;
+//       }
+
+//       &:active {
+//         stroke: $accent;
+//         opacity: 0.3;
+//       }
+//     }
+
+//     & {
+//       transition: stroke .2s ease-in-out, opacity .2s ease-in-out;
+//     }
+//   }
+// }
+
+.control-panel__item {
+    &:active svg path {
+      stroke: $accent;
+      opacity: 0.3;
+    }
+
+    @include xl {
+      &:focus {
+        outline: none;
+      }
+
+      &:focus svg {
+        outline: none;
+      }
+
+      &:focus svg path,
+      &:hover svg path {
+        stroke: $active;
+      }
+
+      &:active svg path {
+        stroke: $accent;
+        opacity: 0.3;
+      }
+    }
+
+    & {
+      transition: stroke .2s ease-in-out, opacity .2s ease-in-out;
+    }
+  }
+
+// .control-panel__item {
+//     &:active svg {
+//       stroke: $accent;
+//       opacity: 0.3;
+//     }
+
+//     @include xl {
+
+//       &:focus svg,
+//       &:hover svg {
+//         stroke: $active;
+//         stroke: blue;
+//         outline: none;
+//       }
+
+//       &:active svg {
+//         stroke: $accent;
+//         opacity: 0.3;
+//       }
+//     }
+
+//     svg {
+//       transition: stroke .2s ease-in-out, opacity .2s ease-in-out;
+//     }
+//   }
+
+.catalog-item__button {
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    background-color: $active;
+    transform: translate(1px, 1px);
+  }
+
+  @include xl {
+    &:focus,
+    &:hover {
+      color: $focus;
+      outline: none;
+    }
+
+    &:active {
+      transform: translate(1px, 1px);
+    }
+  }
+
+  & {
+    transition-property: color, background-color, transform;
+    transition-duration: 0.1s;
+    transition-timing-function: ease-in-out;
+  }
+}
+
+.basket__button-deactivate {
+  &:focus {
+    &::after {
+      outline: none;
+    }
+  }
+
+  &:active {
+    opacity: 0.4;
+
+    &::after {
+      opacity: 0.4;
+    }
+  }
+
+  @include xl {
+    &:focus-visible {
+      outline: none;
+    }
+
+    &:focus,
+    &:hover {
+      &::after {
+        opacity: 1;
+      }
+    }
+
+    &:active {
+      opacity: 0.4;
+
+      &::after {
+        opacity: 0.4;
+      }
+    }
+  }
+
+  &,
+  &::after {
+    transition: opacity .1s ease-in-out;
+  }
+}
+
+.basket-item__button-remove,
+.basket-item__button-add {
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    background-color: $active;
+    transform: translate(1px, 1px);
+  }
+
+  @include xl {
+    &:focus,
+    &:hover {
+      background-color: $active;
+      outline: none;
+    }
+
+    &:active {
+      transform: translate(1px, 1px);
+    }
+  }
+
+  & {
+    transition: background-color .1s ease-in-out, transform .1s ease-in-out;
+  }
+}
+
+// _____________________________________________--
+.basket-item__button-toggle {
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    opacity: 1;
+    transform: translate(1px, 1px) scale(1.1);
+  }
+
+  @include xl {
+    &:focus,
+    &:hover {
+      outline: none;
+      opacity: 1;
+      transform: scale(1.2);
+    }
+
+    &:active {
+      opacity: 1;
+      transform: translate(1px, 1px) scale(1.1);
+    }
+  }
+
+  & {
+    transition: opacity .1s ease-in-out, transform .1s ease-in-out;
+  }
+}
+
+.basket__button-checkout {
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    transform: translate(1px, 1px);
+  }
+
+  @include xl {
+    &:focus,
+    &:hover {
+      opacity: 0.8;
+      outline: none;
+    }
+
+    &:active {
+      opacity: 1;
+      transform: translate(1px, 1px);
+    }
+  }
+
+  & {
+    transition: opacity .1s ease-in-out, transform .1s ease-in-out;
+
+  }
+}
+
+// мб убрать?
+.select__item {
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    background-color: $active;
+  }
+
+  @include xl {
+    &:focus,
+    &:hover {
+      background-color: $active;
+      outline: none;
+    }
+
+    &:active {
+      opacity: 0.9;
+    }
+  }
+
+  & {
+    transition: opacity .1s ease-in-out, background-color .1s ease-in-out;
+
+  }
+}

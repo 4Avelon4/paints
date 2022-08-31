@@ -1,0 +1,221 @@
+.hero {
+  &__container {
+    position: relative;
+    padding: 16px 24px;
+    min-height: 100px;
+
+    @include sm {
+      padding: 35px 64px;
+      min-height: 360px;
+    }
+
+    @include lg {
+      min-height: 491px;
+    }
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+
+    @include sm {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 88%;
+    letter-spacing: -0.04em;
+    color: $accent;
+
+    @include sm {
+      font-weight: 400;
+      font-size: 72px;
+      line-height: 88%;
+      letter-spacing: -0.02em;
+      color: #FFF;
+    }
+  }
+
+  &__descr {
+    display: none;
+
+    @include sm {
+      display: block;
+      margin: 0;
+      margin-bottom: 89px;
+      max-width: 475px;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 130%;
+      text-align: center;
+      letter-spacing: 0.02em;
+      color: #FFF;
+    }
+
+    @include lg {
+      margin-bottom: 143px;
+    }
+  }
+
+  &__pagination {
+    @include sm {
+      position: relative;
+      left: 8px;
+      width: 124px;
+      height: 32px;
+      background-image: url(../img/hero/pagination.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+
+  }
+}
+
+
+.info {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 49px;
+
+  @include sm {
+    margin-bottom: 100px;
+  }
+
+  @include lg {
+    margin-bottom: 178px;
+  }
+
+  &__list {
+    @extend %clearListStyles;
+    display: flex;
+  }
+
+  &__item {
+    position: relative;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 19px;
+  }
+
+  &__item:not(:first-child) {
+    &::before {
+      position: absolute;
+      top: -8px;
+      left: -11px;
+      width: 3px;
+      height: 3px;
+      content: url(../img/hero/ellipse-info.svg);
+    }
+  }
+
+  &__descr {
+    display: block;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 100%;
+    letter-spacing: 0.06em;
+    opacity: 0.3;
+    text-transform: uppercase;
+    color: $accent;
+    max-width: 140px;
+
+    @include sm {
+      color: #fff;
+    }
+  }
+}
+
+
+.swiper-slide {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.slide-1 {
+  background-image: url('../img/hero/hero.jpg');
+}
+
+.slide-2{
+  background-image: url('../img/hero/hero.jpg');
+}
+
+.slide-3 {
+  background-image: url('../img/hero/hero.jpg');
+}
+
+.slide-4 {
+  background-image: url('../img/hero/hero.jpg');
+}
+
+.slide-5{
+  background-image: url('../img/hero/hero.jpg');
+}
+
+.slide-6 {
+  background-image: url('../img/hero/hero.jpg');
+}
+
+.swiper-container {
+  display: none;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  @include sm {
+    display: block;
+  }
+}
+
+.swiper-pagination {
+  z-index: 2;
+}
+
+.swiper-pagination-bullet {
+  width: 6px;
+  height: 6px;
+  margin: 0 4px !important;
+  background: #fff;
+  opacity: .4;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+.swiper-horizontal>.swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  bottom: 47px;
+  left: 7px;
+}
+
+.swiper-button-prev, .swiper-rtl .swiper-button-next {
+  display: none;
+  color: #fff;
+  left: 418px;
+  top: 67%;
+}
+
+.swiper-button-next, .swiper-rtl .swiper-button-prev {
+  color: #fff;
+  top: 67%;
+  right: 30px;
+
+  @include xxl {
+    right: 418px;
+  }
+}
